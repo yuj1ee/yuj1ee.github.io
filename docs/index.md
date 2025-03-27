@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Jie的博客"
+  name: "杰的博客"
   text: "分享一些干货"
   tagline: 你并不是为了满足他人的期待而活着，别人也不是为了满足你的期待而活着
   actions:
