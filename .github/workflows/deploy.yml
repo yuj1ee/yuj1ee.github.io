@@ -19,22 +19,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: "master"
-      # 安装pnpm
-      - name: Install pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
       # 安装node环境
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: "pnpm"
+          cache: "npm"
       # 使用pnpm安装依赖
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       # 打包vitepress项目
       - name: Build Site
-        run: pnpm run docs:build
+        run: npm run docs:build
       # 将打包后dist里的产物提交到prod分支
       - name: Deploy for Github 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
